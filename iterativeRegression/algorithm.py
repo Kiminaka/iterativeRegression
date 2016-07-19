@@ -324,27 +324,28 @@ class IterativeRegression():
     def create_data_format1(self, kairos_data, num_processed):
         self.account_id = kairos_data.account_id[0]
         self.start_date = kairos_data.weighed_at[0]
-        if num_processed == 0:
-            col = [u'id', u'account_id', u'weighed_at', u'value', u'confirmed', u'manual',u'filtered']
-            data = kairos_data[col]
-            data = data.rename(columns = {'id':'weight_id'})
-            data['filtered2'] = False
-            data['processed'] = False
+        # if num_processed == 0:
+        col = [u'id', u'account_id', u'weighed_at', u'value', u'confirmed', u'manual',u'filtered']
+        data = kairos_data[col]
+        data = data.rename(columns = {'id':'weight_id'})
+        data['filtered2'] = False
+        data['processed'] = False
 
-        else:
-            col = [u'id', u'account_id', u'weighed_at', u'value', u'confirmed', u'manual',u'filtered' ,u'filtered2', u'value_prediction_w16', 'feature_col', u'processed']
-            old_data = kairos_data[:num_processed]
-            new_data = kairos_data[num_processed:]
-            new_data['processed'] = False
-            data = pd.concat([old_data, new_data])
-            data['filtered2'] = False
-            data = data[col]
-            data = data.rename(columns = {'id':'weight_id'})
+        # else:
+        #     col = [u'id', u'account_id', u'weighed_at', u'value', u'confirmed', u'manual',u'filtered' ,u'filtered2', u'value_prediction_w16', 'feature_col', u'processed']
+        #     old_data = kairos_data[:num_processed]
+        #     new_data = kairos_data[num_processed:]
+        #     new_data['processed'] = False
+        #
+        #     data = pd.concat([old_data, new_data])
+        #     data['filtered2'] = False
+        #     data = data[col]
+        #     data = data.rename(columns = {'id':'weight_id'})
 
 
         data['model_version'] = self.model_version
         data['feature_col'] = 0
-        data['value_prediction_w16'] = 0
+        data['value_prediction_w16'] = None
         for i, date in enumerate(data.weighed_at):
             if i == 0:
                 data['feature_col'][i] = 0
@@ -364,7 +365,7 @@ class IterativeRegression():
         new_data['filtered2'] = False
         new_data['processed'] = False
         new_data['feature_col'] = 0
-        new_data['value_prediction_w16'] = 0
+        new_data['value_prediction_w16'] = None
         new_data['model_version'] = self.model_version
 
         for i, date in enumerate(new_data.weighed_at):
