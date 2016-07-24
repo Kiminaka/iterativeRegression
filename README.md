@@ -22,7 +22,7 @@ __1 to 3 is to prepare the first window to fit the model. 4 to 6 is to iterative
 In addition to above, I added some more conditional logics:
 - added conditional logics for best estimating the initial weight data point
 - added a function to keep track of number of days passed since the first weigh-in date. This value will be the input data for regression model and it enables the model to predict a specific point in future time. 
-- added a function to take care of the uncertainty of unseen future weight data (absence of inliers) by incrementaly incraesing the threshold. 
+- added a function to take care of the uncertainty of unseen future weight data (absence of inliers) by incrementally increasing the threshold. 
 
 ###Note:
 - You can change parameters and set up database access in `config.py` file. 
