@@ -1,6 +1,6 @@
 Iterative RANSAC regression algorithm specifically for outlier detection and prediction of weigh-ins from smart scales.
 =========
-The robust algorithm is useful if the data includes multiple trends (for example, X number of family members use the scale) or a lot of outliers. The algorithm is specifically customized for weight logs sent from smart scale. 
+The robust algorithm is useful if the data includes multiple trends (for example, X number of family members use the scale) or a lot of outliers. The algorithm is specifically designed for weight log data sent from smart scale. 
 
 # Algorithm (how it works)
 __1 to 3 is to prepare the first window to fit the model. 4 to 6 is to iteratively update the window for preparing training data and predicting the next points__
