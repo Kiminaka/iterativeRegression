@@ -1,6 +1,6 @@
 Iterative RANSAC regression algorithm specifically for outlier detection and prediction of weigh-ins from smart scales.
 =========
-The algorithm is specifically designed for weight log data sent from smart scale utilizing domain specific knowledge. 
+The algorithm is designed specifically for weight log data sent from smart scale utilizing domain specific knowledge. 
 
 # Algorithm (how it works)
 __1 to 3 is to prepare the first window to fit the model. 4 to 6 is to iteratively update the window for preparing training data and predicting the next points__
