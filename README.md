@@ -19,7 +19,7 @@ __1 to 3 is to prepare the first window to fit the model. 4 to 6 is to iterative
 3. The rest of the dataset will then be tested against the fitted model. Those points that fit the estimated model well (according to some model-specific loss function) are considered as part of the _consensus set_. (The estimated model will be reasonably good if sufficiently many points have been classified as part of the _consensus set_)
 4. Iterate over 1-3 and pick the best fitting model
 
-In addition to above, I added some more conditional logics:
+In addition to above, I added some more conditional logic:
 - added conditional logics for best estimating the initial weight data point
 - added a function to keep track of number of days passed since the first weigh-in date. This value will be the input data for regression model and it enables the model to predict a specific point in future time. 
 - added a function to take care of the uncertainty of unseen future weight data (absence of inliers) by incrementally increasing the threshold. 
